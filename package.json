@@ -9,6 +9,7 @@
     "url": "https://www.elian.codes/"
   },
   "homepage": "https://brutal.elian.codes",
+  "packageManager": "pnpm@8.15.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
