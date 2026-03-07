@@ -1,95 +1,831 @@
 ---
-import Layout from '@layouts/Default.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
-import MobileSocials from '@components/home/MobileSocials.astro';
-import { Pill } from '@eliancodes/brutal-ui';
-import { Button } from '@eliancodes/brutal-ui';
-import { Card } from '@eliancodes/brutal-ui';
-
-const builtWith = [
-  { name: 'Astro', url: 'https://astro.build/' },
-  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
-  {
-    name: 'Content Collections',
-    url: 'https://docs.astro.build/en/guides/content-collections/',
-  },
-  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
-  {
-    name: 'Sitemap',
-    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
-  },
-  { name: 'Vercel', url: 'https://vercel.com' },
-  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
-];
+import NeobrutalistLayout from "@layouts/NeobrutalistLayout.astro";
 ---
 
-<Layout
-  title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+<NeobrutalistLayout
+  title="Tran Duc Thong - Portfolio"
+  description="Flutter and React Native Engineer Portfolio."
 >
-  <main class='bg-pink p-6'>
-    <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
-      <h2 class='hidden'>About Brutal</h2>
-      <div class='col-span-4'>
-        <Card>
-          <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
-              Brutal theme for <a
-                class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Astro</a
-              >
-            </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-              A minimalistic, neobrutalism theme for Astro.
-            </p>
-            <Button target={'_self'} href='/blog/'>
-              Check out the blog &rarr;
-            </Button>
-          </div>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Brutal is built with
-          </h2>
-          <ul class='flex gap-4 flex-wrap'>
-            {
-              builtWith.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class='sanchez'
-                      href={item.url}
-                      target='_blank'
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
-                </li>
-              ))
-            }
-          </ul>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
-          </p>
-        </Card>
+  <!-- ABOUT TAB -->
+  <div
+    id="tab-about"
+    class="tab-content p-6 md:p-12 lg:p-16 flex flex-col gap-16"
+  >
+    <!-- Hero / Intro -->
+    <section class="max-w-5xl mx-auto w-full">
+      <div class="flex flex-col gap-8 z-10">
+        <div
+          class="inline-flex w-fit items-center gap-2 px-3 py-1 bg-white dark:bg-gray-800 border-2 border-brutal-black dark:border-white rounded-full"
+        >
+          <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span class="text-xs font-bold uppercase tracking-wider"
+            >Available for work</span
+          >
+        </div>
+        <h1
+          class="text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter mix-blend-difference dark:text-white"
+        >
+          I'M A <span class="text-primary text-stroke-black"
+            >FLUTTER & REACT NATIVE</span
+          ><br />
+          ENGINEER.
+        </h1>
+        <p
+          class="text-lg md:text-xl font-medium max-w-2xl text-gray-700 dark:text-gray-300 leading-relaxed border-l-4 border-primary pl-4"
+        >
+          Hi, I am a Software Engineer with 3+ years of experience, focusing on
+          Flutter and React Native - modern cross-platform frameworks. Now I am
+          living in Da Nang city and I’d love to create some community products.
+          I'm also open to working with others who share the same mindset, so we
+          can build and launch meaningful products together.
+        </p>
       </div>
     </section>
-    <RecentBlogPosts />
-  </main>
-</Layout>
+
+    <!-- Work Experience -->
+    <section class="max-w-5xl mx-auto w-full">
+      <h2
+        class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-8 border-b-4 border-brutal-black dark:border-white w-fit pr-8 pb-2"
+      >
+        Work Experience
+      </h2>
+      <div class="flex flex-col gap-8">
+        <div
+          class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-brutal dark:shadow-brutal-dark hover:-translate-y-1 transition-transform"
+        >
+          <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
+            <h3 class="text-2xl font-bold uppercase">Enouvo IT Solutions</h3>
+            <span
+              class="font-bold text-primary border-2 border-primary px-3 py-1 bg-primary/10 rounded h-fit self-start md:self-auto"
+              >10/2024 - Now</span
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            I’m currently working as a Software Engineer in Innovation Lab,
+            mainly focusing on Flutter development. Sometimes I also work on
+            Node.js backend projects and maintaining a Moodle project, and I
+            really enjoy exploring new technologies.
+          </p>
+        </div>
+
+        <div
+          class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-brutal dark:shadow-brutal-dark hover:-translate-y-1 transition-transform"
+        >
+          <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
+            <h3 class="text-2xl font-bold uppercase">Dipro Tech</h3>
+            <span
+              class="font-bold text-brutal-black dark:text-white border-2 border-brutal-black dark:border-white px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded h-fit self-start md:self-auto"
+              >06/2022 - 10/2024</span
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            The first company I worked in as a Mobile developer with 2+ years of
+            experience building cross-platform apps using React Native and
+            Flutter.
+          </p>
+        </div>
+
+        <div
+          class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-brutal dark:shadow-brutal-dark hover:-translate-y-1 transition-transform"
+        >
+          <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
+            <h3 class="text-2xl font-bold uppercase">
+              Google Developer Student Club - DUT
+            </h3>
+            <span
+              class="font-bold text-brutal-black dark:text-white border-2 border-brutal-black dark:border-white px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded h-fit self-start md:self-auto"
+              >2021 - 2023</span
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 font-medium">
+            Before working as a Mobile Developer, I was a Designer in this Club.
+            Learned many Technical Skills like Graphic Design, Flutter, and
+            JavaScript, participating in the organization of some Technology
+            workshops: UniHack, Info Session...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto w-full">
+      <!-- Education -->
+      <section>
+        <h2
+          class="text-3xl font-black uppercase tracking-tight mb-8 border-b-4 border-brutal-black dark:border-white pl-4 border-l-8 pb-2 bg-yellow-300 text-black"
+        >
+          Education
+        </h2>
+        <div class="flex flex-col gap-6">
+          <div
+            class="border-2 border-brutal-black p-4 bg-white dark:bg-gray-800 shadow-brutal-sm"
+          >
+            <h4 class="font-bold text-lg leading-tight uppercase">
+              Da Nang University of Science and Technology
+            </h4>
+            <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">
+              Information Technology (2019-2023)
+            </p>
+          </div>
+          <div
+            class="border-2 border-brutal-black p-4 bg-white dark:bg-gray-800 shadow-brutal-sm"
+          >
+            <h4 class="font-bold text-lg leading-tight uppercase">
+              High School for Gifted Student - Vinh University
+            </h4>
+            <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">
+              Chemistry Honor Program (2016-2019)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards -->
+      <section>
+        <h2
+          class="text-3xl font-black uppercase tracking-tight mb-8 border-b-4 border-brutal-black dark:border-white pl-4 border-l-8 pb-2 bg-pink-400 text-white dark:text-black"
+        >
+          Awards
+        </h2>
+        <ul class="flex flex-col gap-4">
+          <li
+            class="flex items-start gap-4 p-3 border-2 border-brutal-black bg-white dark:bg-background-dark font-medium"
+          >
+            <span class="material-symbols-outlined text-primary"
+              >emoji_events</span
+            >
+            <span>Nghe An Hackathon 2022 (Third prize)</span>
+          </li>
+          <li
+            class="flex items-start gap-4 p-3 border-2 border-brutal-black bg-white dark:bg-background-dark font-medium"
+          >
+            <span class="material-symbols-outlined text-primary"
+              >emoji_events</span
+            >
+            <span
+              >Hackyouth 2023: Tech startup Ecosystem (Top 12th teams, Best
+              UI-UX team)</span
+            >
+          </li>
+          <li
+            class="flex items-start gap-4 p-3 border-2 border-brutal-black bg-white dark:bg-background-dark font-medium"
+          >
+            <span class="material-symbols-outlined text-primary"
+              >emoji_events</span
+            >
+            <span>Google Solution Challenge Global 2023 (Top 100 teams)</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- SKILLS TAB -->
+  <div
+    id="tab-skills"
+    class="tab-content hidden p-6 md:p-12 lg:p-16 flex flex-col gap-12 max-w-5xl mx-auto w-full"
+  >
+    <div class="mb-4">
+      <h2 class="text-5xl font-black uppercase tracking-tight mb-2">
+        Technical Skills
+      </h2>
+      <div class="h-4 w-32 bg-primary"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Flutter / Dart -->
+      <div
+        class="bg-[#02569B]/10 p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark relative overflow-hidden"
+      >
+        <div class="absolute -right-4 -top-4 opacity-10 rotate-12">
+          <span class="material-symbols-outlined text-[100px]"
+            >flutter_dash</span
+          >
+        </div>
+        <h3
+          class="text-2xl font-black uppercase mb-4 text-[#02569B] dark:text-[#45D1FD]"
+        >
+          Flutter / Dart
+        </h3>
+        <ul class="list-none flex flex-col gap-3 font-medium">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >Common Widget in Flutter, Dart syntax, OOP
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >State managements: setState, bloc, provider, riverpod, getX
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >Material 3 design, responsive UI, animations
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >Dependency Injection, Repository Pattern, Clean Architecture, MVVM
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >UI/Utilities: form_builder, flutter_test, auto_route, fpdart
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >Firebase: Firestore, Auth, FCM, App Distribution, Analytics
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >CI/CD: Codemagic, Github Actions, Gitlab CI, Fastlane
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#02569B]"
+              >check_box</span
+            >Backend: dart_frog
+          </li>
+        </ul>
+      </div>
+
+      <!-- React Native -->
+      <div
+        class="bg-[#61DAFB]/10 p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark relative overflow-hidden"
+      >
+        <h3
+          class="text-2xl font-black uppercase mb-4 text-[#0088cc] dark:text-[#61DAFB]"
+        >
+          React Native
+        </h3>
+        <ul class="list-none flex flex-col gap-3 font-medium">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#0088cc]"
+              >check_box</span
+            >Common Components with function Component, React Hooks, LifeCycle
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#0088cc]"
+              >check_box</span
+            >Networking tools and state managements: Redux toolkit, tanstack,
+            axios, RTK query
+          </li>
+        </ul>
+      </div>
+
+      <!-- NodeJS -->
+      <div
+        class="bg-[#339933]/10 p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark relative overflow-hidden"
+      >
+        <h3
+          class="text-2xl font-black uppercase mb-4 text-[#339933] dark:text-[#68A063]"
+        >
+          Node.js Ecosystem
+        </h3>
+        <ul class="list-none flex flex-col gap-3 font-medium">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#339933]"
+              >check_box</span
+            >Basic syntax with TypeScript, JavaScript
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#339933]"
+              >check_box</span
+            >Experienced with NestJS, NextJS, ExpressJS
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#339933]"
+              >check_box</span
+            >ORM libraries: typeorm, prisma...
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[#339933]"
+              >check_box</span
+            >ReactJS/NextJS with tailwindcss, ant-design, shadcn
+          </li>
+        </ul>
+      </div>
+
+      <!-- Android -->
+      <div
+        class="bg-green-500/10 p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark"
+      >
+        <h3
+          class="text-2xl font-black uppercase mb-4 text-green-700 dark:text-green-400"
+        >
+          Android Native
+        </h3>
+        <ul class="list-none flex flex-col gap-3 font-medium">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-green-700 font-bold"
+              >check_box</span
+            >Built apps using Clean Architecture & MVVM
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-green-700 font-bold"
+              >check_box</span
+            >Jetpack Compose, View Binding, Retrofit, Room
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-green-700 font-bold"
+              >check_box</span
+            >PlayStore app deployment and management
+          </li>
+        </ul>
+      </div>
+
+      <!-- Cloud & Infrastructure -->
+      <div
+        class="bg-orange-500/10 p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark"
+      >
+        <h3
+          class="text-2xl font-black uppercase mb-4 text-orange-700 dark:text-orange-400"
+        >
+          Cloud & DevOps
+        </h3>
+        <ul class="list-none flex flex-col gap-3 font-medium">
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-orange-700"
+              >check_box</span
+            >Read/analyze logs in Cloudwatch, Grafana
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-orange-700"
+              >check_box</span
+            >Serverless: AWS lamda, Cloudflare Workers, Supabase Edge
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-orange-700"
+              >check_box</span
+            >Github Action / Gitlab Pipeline testing & deployment
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-orange-700"
+              >check_box</span
+            >Run/manage small VMs in EC2/GCP VM
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-orange-700"
+              >check_box</span
+            >Config SSL, nginx/apache for web server
+          </li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div
+        class="p-6 border-4 border-brutal-black dark:border-white rounded shadow-brutal dark:shadow-brutal-dark flex flex-col gap-4"
+      >
+        <h3 class="text-2xl font-black uppercase mb-2">Soft & Other Skills</h3>
+        <div class="flex flex-wrap gap-3">
+          <span
+            class="px-3 py-1 bg-yellow-300 text-black border-2 border-black font-bold shadow-[2px_2px_0_0_#000]"
+            >Figma</span
+          >
+          <span
+            class="px-3 py-1 bg-purple-300 text-black border-2 border-black font-bold shadow-[2px_2px_0_0_#000]"
+            >Adobe Illustrator</span
+          >
+          <span
+            class="px-3 py-1 bg-blue-300 text-black border-2 border-black font-bold shadow-[2px_2px_0_0_#000]"
+            >Whimsical</span
+          >
+          <span
+            class="px-3 py-1 bg-green-300 text-black border-2 border-black font-bold shadow-[2px_2px_0_0_#000]"
+            >TOEIC 650</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT TAB -->
+  <div
+    id="tab-project"
+    class="tab-content hidden p-6 md:p-12 lg:p-16 max-w-6xl mx-auto w-full"
+  >
+    <div class="mb-12">
+      <h2 class="text-5xl font-black uppercase tracking-tight mb-2">
+        My Projects
+      </h2>
+      <div class="h-4 w-32 bg-primary mb-6"></div>
+      <p
+        class="text-gray-600 dark:text-gray-400 font-medium text-lg max-w-2xl border-l-4 border-primary pl-4"
+      >
+        A showcase of commercial and personal projects I've built using Flutter,
+        React Native, and Node.js.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Box 1 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full"
+      >
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-2xl font-bold uppercase text-primary">Bus app</h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-gray-200 dark:bg-gray-700 rounded border-2 border-brutal-black"
+            >Company</span
+          >
+        </div>
+        <p
+          class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 font-medium flex-grow"
+        >
+          Transform an outdated and user-unfriendly website into a visually
+          appealing and user-friendly mobile app.
+        </p>
+        <div
+          class="border-t-2 border-dashed border-gray-300 dark:border-gray-600 pt-4 mt-auto"
+        >
+          <p class="text-sm font-bold text-gray-500 mb-2">Tech Stack:</p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-blue-100 dark:bg-blue-900 font-bold"
+              >Flutter</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-yellow-100 dark:bg-yellow-900 font-bold"
+              >bloc</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-green-100 dark:bg-green-900 font-bold"
+              >webview</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full"
+      >
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-2xl font-bold uppercase text-primary">
+            Attendance app
+          </h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-gray-200 dark:bg-gray-700 rounded border-2 border-brutal-black"
+            >Company</span
+          >
+        </div>
+        <p
+          class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 font-medium flex-grow"
+        >
+          An attendance app, using to check-in with location, announcement with
+          web_socket, draw chart and analysing working time.
+        </p>
+        <div
+          class="border-t-2 border-dashed border-gray-300 dark:border-gray-600 pt-4 mt-auto"
+        >
+          <p class="text-sm font-bold text-gray-500 mb-2">Tech Stack:</p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-blue-100 dark:bg-blue-900 font-bold"
+              >Flutter</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-purple-100 dark:bg-purple-900 font-bold"
+              >web socket</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-red-100 dark:bg-red-900 font-bold"
+              >location</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full"
+      >
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-2xl font-bold uppercase text-primary">Travel app</h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-gray-200 dark:bg-gray-700 rounded border-2 border-brutal-black"
+            >Company</span
+          >
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 font-medium flex-grow">
+          A multiple features app to booking hotel room, take picture and share
+          to local social network, order goods from shops, checkout cart with
+          Stripe, show weather info.
+        </p>
+        <div
+          class="border-t-2 border-dashed border-gray-300 dark:border-gray-600 pt-4 mt-auto"
+        >
+          <p class="text-sm font-bold text-gray-500 mb-2">Tech Stack:</p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-cyan-100 dark:bg-cyan-900 font-bold"
+              >React Native</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-gray-100 dark:bg-gray-600 font-bold"
+              >Redux</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-orange-100 dark:bg-orange-900 font-bold"
+              >Stripe</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 4 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full"
+      >
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-2xl font-bold uppercase text-primary">
+            Trash collecting app
+          </h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-gray-200 dark:bg-gray-700 rounded border-2 border-brutal-black"
+            >Company</span
+          >
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 font-medium flex-grow">
+          User uses this app to book a garbage collection. Provides info like
+          datetime, size, image and real-time tracking route of refuse
+          collector.
+        </p>
+        <div
+          class="border-t-2 border-dashed border-gray-300 dark:border-gray-600 pt-4 mt-auto"
+        >
+          <p class="text-sm font-bold text-gray-500 mb-2">Tech Stack:</p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-blue-100 dark:bg-blue-900 font-bold"
+              >Flutter</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-orange-100 dark:bg-orange-900 font-bold"
+              >Google Map</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-teal-100 dark:bg-teal-900 font-bold"
+              >rx-dart</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 5 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-white dark:bg-gray-800 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full"
+      >
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-2xl font-bold uppercase text-primary">Point app</h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-gray-200 dark:bg-gray-700 rounded border-2 border-brutal-black"
+            >Company</span
+          >
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 font-medium flex-grow">
+          For collecting points in urban tourism by scanning QR and location.
+          Can buy vouchers or checkout with Stripe/PayPay.
+        </p>
+        <div
+          class="border-t-2 border-dashed border-gray-300 dark:border-gray-600 pt-4 mt-auto"
+        >
+          <p class="text-sm font-bold text-gray-500 mb-2">Tech Stack:</p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-cyan-100 dark:bg-cyan-900 font-bold"
+              >React Native</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-gray-100 dark:bg-gray-600 font-bold"
+              >RTK Query</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-brutal-black bg-yellow-100 dark:bg-yellow-900 font-bold"
+              >Payments</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 6 -->
+      <div
+        class="border-4 border-brutal-black dark:border-white bg-pink-100 dark:bg-pink-900/30 rounded-lg shadow-brutal dark:shadow-brutal-dark hover:shadow-brutal-lg transition-all p-6 flex flex-col h-full relative overflow-hidden"
+      >
+        <div class="flex justify-between items-start mb-4 relative z-10">
+          <h3
+            class="text-2xl font-bold uppercase text-pink-600 dark:text-pink-300"
+          >
+            SharingHub
+          </h3>
+          <span
+            class="px-2 py-1 text-xs font-bold bg-white dark:bg-black rounded border-2 border-brutal-black"
+            >Personal</span
+          >
+        </div>
+        <p
+          class="text-gray-600 dark:text-gray-300 mb-4 font-medium flex-grow relative z-10"
+        >
+          A charity app for community, integrated with Google Map and Firebase.
+        </p>
+        <div class="relative z-10">
+          <a
+            href="https://github.com/dscdut/sharinghub"
+            target="_blank"
+            class="inline-flex items-center gap-2 font-bold uppercase underline decoration-2 hover:text-pink-600 transition-colors mb-4"
+          >
+            View on GitHub <span class="material-symbols-outlined text-sm"
+              >open_in_new</span
+            >
+          </a>
+        </div>
+        <div
+          class="border-t-2 border-dashed border-pink-300 dark:border-pink-800 pt-4 mt-auto relative z-10"
+        >
+          <p class="text-sm font-bold text-pink-700 dark:text-pink-400 mb-2">
+            Tech Stack:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="text-xs px-2 py-1 border-2 border-pink-800 bg-white dark:bg-black font-bold"
+              >Flutter</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-pink-800 bg-white dark:bg-black font-bold"
+              >ExpressJS</span
+            >
+            <span
+              class="text-xs px-2 py-1 border-2 border-pink-800 bg-white dark:bg-black font-bold"
+              >Google Maps</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT TAB -->
+  <div
+    id="tab-contact"
+    class="tab-content hidden p-6 md:p-12 lg:p-16 h-full flex items-center justify-center"
+  >
+    <div
+      class="w-full max-w-4xl bg-primary text-white p-1 rounded-xl shadow-brutal-lg border-4 border-brutal-black dark:border-white mx-auto"
+    >
+      <div
+        class="bg-white dark:bg-background-dark p-8 md:p-12 border-2 border-brutal-black dark:border-white rounded-lg h-full"
+      >
+        <div class="text-center mb-10">
+          <div
+            class="inline-flex items-center justify-center p-4 bg-yellow-300 border-4 border-brutal-black rounded-full mb-6"
+          >
+            <span class="material-symbols-outlined text-5xl text-black"
+              >waving_hand</span
+            >
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-black text-brutal-black dark:text-white uppercase mb-4"
+          >
+            Let's Talk
+          </h2>
+          <p class="text-gray-600 dark:text-gray-300 font-medium text-lg">
+            Whether it's a new opportunity or to build a meaningful product
+            together.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-8 max-w-xl mx-auto">
+          <a
+            href="mailto:spoon.me.dev@gmail.com"
+            class="group flex items-center gap-6 p-6 border-4 border-brutal-black dark:border-white rounded bg-gray-50 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all shadow-brutal hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+          >
+            <span
+              class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform"
+              >mail</span
+            >
+            <div class="flex flex-col">
+              <span
+                class="text-sm font-bold uppercase text-gray-500 group-hover:text-white/80 transition-colors"
+                >Email Me At</span
+              >
+              <span class="text-xl md:text-2xl font-black"
+                >spoon.me.dev@gmail.com</span
+              >
+            </div>
+          </a>
+
+          <a
+            href="tel:+84866086426"
+            class="group flex items-center gap-6 p-6 border-4 border-brutal-black dark:border-white rounded bg-gray-50 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all shadow-brutal hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+          >
+            <span
+              class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform"
+              >call</span
+            >
+            <div class="flex flex-col">
+              <span
+                class="text-sm font-bold uppercase text-gray-500 group-hover:text-white/80 transition-colors"
+                >Call Me At</span
+              >
+              <span class="text-xl md:text-2xl font-black">+84 866 086 426</span
+              >
+            </div>
+          </a>
+
+          <div
+            class="flex items-center gap-6 p-6 border-4 border-brutal-black dark:border-white rounded bg-gray-50 dark:bg-gray-800"
+          >
+            <span class="material-symbols-outlined text-4xl">location_on</span>
+            <div class="flex flex-col">
+              <span class="text-sm font-bold uppercase text-gray-500"
+                >Location</span
+              >
+              <span class="text-xl font-black text-brutal-black dark:text-white"
+                >Da Nang City / Nghi Xuan, Ha Tinh</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</NeobrutalistLayout>
+
+<script>
+  // Script to handle tab switching
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    // Function to switch tabs
+    const switchTab = (targetId: string) => {
+      // Hide all contents
+      tabContents.forEach((content) => {
+        content.classList.add("hidden");
+      });
+
+      // Show target content
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+      }
+
+      // Update active state on links
+      tabLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${targetId}`) {
+          // Add active styles
+          link.classList.add(
+            "bg-white",
+            "text-brutal-black",
+            "-translate-x-1",
+            "-translate-y-1",
+            "shadow-[4px_4px_0_0_#000]",
+          );
+          link.classList.remove(
+            "bg-gray-100",
+            "text-gray-600",
+            "shadow-brutal-sm",
+          );
+        } else {
+          // Remove active styles, add inactive styles
+          link.classList.remove(
+            "bg-white",
+            "text-brutal-black",
+            "-translate-x-1",
+            "-translate-y-1",
+            "shadow-[4px_4px_0_0_#000]",
+          );
+          link.classList.add(
+            "bg-gray-100",
+            "text-gray-600",
+            "shadow-brutal-sm",
+          );
+        }
+      });
+    };
+
+    // Add click listeners
+    tabLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          const targetId = href.substring(1);
+          switchTab(targetId);
+          // Optional: Update URL hash without scrolling
+          history.replaceState(null, "", href);
+        }
+      });
+    });
+
+    // Check hash on load
+    const hash = window.location.hash;
+    if (hash) {
+      const targetId = hash.substring(1);
+      if (document.getElementById(targetId)) {
+        switchTab(targetId);
+      }
+    }
+  });
+</script>

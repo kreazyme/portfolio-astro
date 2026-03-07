@@ -1,9 +1,8 @@
 {
   "name": "brutal",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
-  "packageManager": "pnpm@8.6.0",
   "author": {
     "name": "Elian Van Cutsem",
     "email": "hello@elian.codes",

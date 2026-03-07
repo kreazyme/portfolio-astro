@@ -1,0 +1,316 @@
+---
+import BaseHead from "../components/layout/BaseHead.astro";
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description: string;
+    classList?: string;
+    pageTitle?: string;
+    ogImage?: URL;
+}
+
+const { title, description, classList, pageTitle, ogImage } = Astro.props;
+---
+
+<html lang="en" class="light">
+    <BaseHead ogImage={ogImage} title={title} description={description} />
+    <!-- Additional specific fonts for this theme -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet"
+    />
+
+    <body
+        class={`bg-background-light dark:bg-background-dark font-display text-brutal-black dark:text-white transition-colors duration-200 h-screen w-full overflow-hidden ${classList || ""}`}
+    >
+        <div class="flex h-screen w-full flex-col lg:flex-row overflow-hidden">
+            <!-- Sidebar Navigation -->
+            <aside
+                class="w-full lg:w-[280px] xl:w-[320px] flex-shrink-0 flex flex-col justify-between border-b-4 lg:border-b-0 lg:border-r-4 border-brutal-black dark:border-white bg-white dark:bg-background-dark overflow-y-auto z-20"
+            >
+                <div class="p-6 flex flex-col gap-6">
+                    <!-- Profile -->
+                    <div
+                        class="flex flex-col gap-4 items-center lg:items-start"
+                    >
+                        <div class="relative group cursor-pointer">
+                            <!-- Using original image for now, can be updated later -->
+                            <div
+                                class="bg-center bg-no-repeat bg-cover rounded-full h-24 w-24 lg:h-20 lg:w-20 border-2 border-brutal-black dark:border-white shadow-brutal dark:shadow-brutal-dark transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1"
+                                data-alt="Black and white artistic portrait of a developer"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXtgfW43iIUeX8t2dC0NahgglZ4hvqaI3OlqaKZXDEp9LqykZt2XzzZX22fZ43aXLglEE7DzG7J1AL973Pxd6LiPvGQzRhGnWKQH_zuZdI61aiQSUv89df8eBDJZUfm72Yur95WZabU8nYG7-A-tvMTNU4nuKe-Bc8ysWjUeilXkXUlMSlOdH02W1PIQITTNjm64gWswxXVXR-pzZc_940j9b4XtHaWfCvplg9y3xG5u7qiK_BfPBcDx0qu6jDsliPyXbIYZ3NP3_o");'
+                            >
+                            </div>
+                            <div
+                                class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-1 border-2 border-brutal-black dark:border-white flex items-center justify-center"
+                            >
+                                <span class="material-symbols-outlined text-sm"
+                                    >code</span
+                                >
+                            </div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <h1
+                                class="text-2xl font-black uppercase tracking-tight"
+                            >
+                                Tran Duc Thong
+                            </h1>
+                            <div
+                                class="inline-block bg-primary px-2 py-0.5 border-2 border-brutal-black dark:border-white transform -rotate-2 mt-1"
+                            >
+                                <p
+                                    class="text-white text-xs font-bold uppercase tracking-wider"
+                                >
+                                    Flutter Developer
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Links -->
+                    <nav
+                        class="flex flex-col gap-3 mt-4 w-full"
+                        id="sidebar-nav"
+                    >
+                        <button
+                            data-tab="tab-about"
+                            class="w-full text-left group flex items-center gap-3 px-4 py-3 rounded border-2 border-brutal-black dark:border-white bg-primary/10 transition-all duration-200 tab-nav-btn"
+                        >
+                            <span class="material-symbols-outlined">person</span
+                            >
+                            <span class="font-bold text-sm uppercase"
+                                >About</span
+                            >
+                        </button>
+                        <button
+                            data-tab="tab-skills"
+                            class="w-full text-left group flex items-center gap-3 px-4 py-3 rounded border-2 border-transparent hover:border-brutal-black dark:hover:border-white hover:bg-primary/10 transition-all duration-200 tab-nav-btn"
+                        >
+                            <span class="material-symbols-outlined">bolt</span>
+                            <span class="font-bold text-sm uppercase"
+                                >Skills</span
+                            >
+                        </button>
+                        <button
+                            data-tab="tab-project"
+                            class="w-full text-left group flex items-center gap-3 px-4 py-3 rounded border-2 border-transparent hover:border-brutal-black dark:hover:border-white hover:bg-primary/10 transition-all duration-200 tab-nav-btn"
+                        >
+                            <span class="material-symbols-outlined"
+                                >grid_view</span
+                            >
+                            <span class="font-bold text-sm uppercase"
+                                >Projects</span
+                            >
+                        </button>
+                        <button
+                            data-tab="tab-contact"
+                            class="w-full text-left group flex items-center gap-3 px-4 py-3 rounded border-2 border-transparent hover:border-brutal-black dark:hover:border-white hover:bg-primary/10 transition-all duration-200 tab-nav-btn"
+                        >
+                            <span class="material-symbols-outlined">mail</span>
+                            <span class="font-bold text-sm uppercase"
+                                >Contact</span
+                            >
+                        </button>
+                    </nav>
+                </div>
+                <!-- Sidebar Footer -->
+                <div
+                    class="p-6 border-t-2 border-brutal-black dark:border-white bg-primary/5"
+                >
+                    <div
+                        class="flex gap-4 justify-center lg:justify-start mb-4"
+                    >
+                        <a
+                            class="p-2 bg-white dark:bg-background-dark border-2 border-brutal-black dark:border-white rounded hover:bg-primary hover:text-white transition-colors"
+                            href="https://github.com/kreazyme"
+                            target="_blank"
+                        >
+                            <span class="material-symbols-outlined text-xl"
+                                >code</span
+                            >
+                        </a>
+                        <a
+                            class="p-2 bg-white dark:bg-background-dark border-2 border-brutal-black dark:border-white rounded hover:bg-primary hover:text-white transition-colors"
+                            href="mailto:spoon.me.dev@gmail.com"
+                        >
+                            <span class="material-symbols-outlined text-xl"
+                                >alternate_email</span
+                            >
+                        </a>
+                    </div>
+                    <a
+                        href="/_astro/TranDucThong_Flutter_Middle.pdf"
+                        download
+                        class="w-full flex cursor-pointer items-center justify-center rounded-lg h-12 border-2 border-brutal-black dark:border-white bg-primary text-white shadow-brutal dark:shadow-brutal-dark active:shadow-none active:translate-x-1 active:translate-y-1 transition-all"
+                    >
+                        <span class="font-bold uppercase tracking-wide mr-2"
+                            >Download CV</span
+                        >
+                        <span class="material-symbols-outlined">download</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main
+                class="flex-1 flex flex-col h-full overflow-y-auto relative bg-background-light dark:bg-background-dark scroll-smooth window-pane"
+            >
+                <!-- Sticky Top Navigation for Mobile (Optional but good for fallback) -->
+                <div
+                    class="sticky top-0 z-30 w-full bg-white dark:bg-background-dark border-b-4 border-brutal-black dark:border-white flex overflow-x-auto hide-scrollbar lg:hidden"
+                    id="mobile-tab-nav"
+                >
+                    <button
+                        data-tab="tab-about"
+                        class="flex-1 min-w-[100px] py-4 px-6 font-bold uppercase text-sm border-r-2 border-brutal-black dark:border-white bg-primary text-white text-center tab-nav-btn"
+                        >About</button
+                    >
+                    <button
+                        data-tab="tab-skills"
+                        class="flex-1 min-w-[100px] py-4 px-6 font-bold uppercase text-sm border-r-2 border-brutal-black dark:border-white bg-white dark:bg-transparent text-brutal-black dark:text-white hover:bg-primary/10 text-center tab-nav-btn"
+                        >Skills</button
+                    >
+                    <button
+                        data-tab="tab-project"
+                        class="flex-1 min-w-[100px] py-4 px-6 font-bold uppercase text-sm border-r-2 border-brutal-black dark:border-white bg-white dark:bg-transparent text-brutal-black dark:text-white hover:bg-primary/10 text-center tab-nav-btn"
+                        >Projects</button
+                    >
+                    <button
+                        data-tab="tab-contact"
+                        class="flex-1 min-w-[100px] py-4 px-6 font-bold uppercase text-sm bg-white dark:bg-transparent text-brutal-black dark:text-white hover:bg-primary/10 text-center tab-nav-btn"
+                        >Contact</button
+                    >
+                </div>
+
+                <slot />
+
+                <!-- Footer -->
+                <footer
+                    class="p-8 border-t-4 border-brutal-black dark:border-white bg-white dark:bg-background-dark mt-auto"
+                >
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center gap-4"
+                    >
+                        <p class="font-bold text-sm uppercase">
+                            © 2024 Tran Duc Thong.
+                        </p>
+                        <div class="flex gap-4">
+                            <a
+                                class="font-bold hover:text-primary uppercase text-sm"
+                                href="https://github.com/kreazyme">GitHub</a
+                            >
+                            <a
+                                class="font-bold hover:text-primary uppercase text-sm"
+                                href="mailto:spoon.me.dev@gmail.com">Email</a
+                            >
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+
+        <!-- Client-side Tab Logic -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const tabButtons = document.querySelectorAll(".tab-nav-btn");
+                const tabContents = document.querySelectorAll(".tab-content");
+
+                tabButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const targetId = button.getAttribute("data-tab");
+
+                        // Hide all tab contents
+                        tabContents.forEach((content) => {
+                            content.classList.add("hidden");
+                        });
+
+                        // Show target tab content
+                        const targetContent = document.getElementById(targetId);
+                        if (targetContent) {
+                            targetContent.classList.remove("hidden");
+                        }
+
+                        // Update button styles (reset all)
+                        tabButtons.forEach((btn) => {
+                            // Sidebar logic
+                            if (btn.parentElement.id === "sidebar-nav") {
+                                btn.classList.remove(
+                                    "border-brutal-black",
+                                    "dark:border-white",
+                                    "bg-primary/10",
+                                );
+                                btn.classList.add("border-transparent");
+                            }
+                            // Mobile logic
+                            if (btn.parentElement.id === "mobile-tab-nav") {
+                                btn.classList.remove(
+                                    "bg-primary",
+                                    "text-white",
+                                );
+                                btn.classList.add(
+                                    "bg-white",
+                                    "dark:bg-transparent",
+                                    "text-brutal-black",
+                                    "dark:text-white",
+                                );
+                            }
+                        });
+
+                        // Set active states for the clicked tab ID across both navs
+                        const activeBtns = document.querySelectorAll(
+                            `[data-tab="${targetId}"]`,
+                        );
+                        activeBtns.forEach((activeBtn) => {
+                            if (activeBtn.parentElement.id === "sidebar-nav") {
+                                activeBtn.classList.remove(
+                                    "border-transparent",
+                                );
+                                activeBtn.classList.add(
+                                    "border-brutal-black",
+                                    "dark:border-white",
+                                    "bg-primary/10",
+                                );
+                            }
+                            if (
+                                activeBtn.parentElement.id === "mobile-tab-nav"
+                            ) {
+                                activeBtn.classList.remove(
+                                    "bg-white",
+                                    "dark:bg-transparent",
+                                    "text-brutal-black",
+                                    "dark:text-white",
+                                );
+                                activeBtn.classList.add(
+                                    "bg-primary",
+                                    "text-white",
+                                );
+                            }
+                        });
+
+                        // Scroll completely to top when switching tabs
+                        const mainScrollArea = document.querySelector("main");
+                        if (mainScrollArea)
+                            mainScrollArea.scrollTo({
+                                top: 0,
+                                behavior: "smooth",
+                            });
+                    });
+                });
+            });
+        </script>
+        <style>
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+    </body>
+</html>
