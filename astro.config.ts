@@ -3,13 +3,11 @@ import sitemap from '@astrojs/sitemap';
 import UnoCSS from 'unocss/astro';
 
 export default defineConfig({
-  // used to generate images
-  site:
-    process.env.VERCEL_ENV === 'production'
-      ? 'https://brutal.elian.codes/'
-      : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/`
-      : 'https://localhost:3000/',
+  // used to generate images and sitemap
+  site: process.env.GITHUB_ACTIONS
+      ? 'https://kreazyme.github.io'
+      : 'http://localhost:4321/',
+  base: process.env.GITHUB_ACTIONS ? '/portfolio-astro' : '/',
   trailingSlash: 'ignore',
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
   vite: {
